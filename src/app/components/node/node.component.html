@@ -1,0 +1,11 @@
+<div *ngIf="children" class="node-container">
+    <div *ngFor="let node of children" >
+
+        <span (click)="expand(node)">
+            {{node.expanded ? 'V' : '>'}} 
+            <app-node-label [type]="node.type" [name]="node.name"></app-node-label>
+        </span>
+        
+        <app-node *ngIf="node.expanded" [children]="node.children" [parent]="node.id"></app-node>
+    </div>  
+</div>
