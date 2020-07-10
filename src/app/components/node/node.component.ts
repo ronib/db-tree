@@ -21,7 +21,6 @@ export class NodeComponent {
 
   loadTreeData(parent: number): void {
     this.apiService.getDbData(parent).subscribe(result => {
-      console.log("children", result);
       this.children = result;
     },
       err => {
